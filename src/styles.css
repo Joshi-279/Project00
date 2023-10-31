@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@fortawesome/fontawesome-free/css/all.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body{
+    background-color: whitesmoke;
+    /* position: relative;
+    top: -105px; */
+}
+
+.search-box .mdc-text-field--no-label{
+    height:39px
+}
+
+/* style for items table - added stripes */
+.mdc-data-table__content tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .category-search-mat-field-filter
+ .mat-mdc-text-field-wrapper{
+    height: 47px;
+    margin-top: 6px;
+}
+
+
+.homepage-chart-style > canvas{
+    height: 516px !important;
+    width: 516px !important;
+    /* height: 447px !important;
+    width: 447px !important; */
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,27 @@
+.search-box{
+    padding-top: 22px;
+}
+
+.search-box .mdc-text-field--no-label{
+    height:39px
+}
+
+.search-box-input{
+    position: absolute;
+    margin-top: -7px;
+}
+
+
+.bg-drawer{
+    background-color:#f1f1f1;
+    min-height: 100vh;
+}
+
+.profile-button {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .profile-button:hover {
+    transform: scale(1.1);
+  }

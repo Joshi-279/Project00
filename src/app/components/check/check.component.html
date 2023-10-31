@@ -1,0 +1,80 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Chart</h5>
+            <div class="homepage-chart-style" style="display: block;">
+              <!-- PIE -->
+              <canvas baseChart [datasets]="pieChartData" [labels]="pieChartLabels"   [options]="pieChartOptions"  [type]="pieChartType" ></canvas>
+              <!-- BAR -->
+              <!-- <canvas baseChart [datasets]="pieChartData" [labels]="pieChartLabels" ></canvas> -->
+
+              <!-- <canvas baseChart
+              [datasets]="pieChartData"
+              [labels]="pieChartLabels"
+              [type]="pieChartType"
+              [options]="pieChartOptions"
+              [legend]="pieChartLegend"
+              [plugins]="pieChartPlugins">
+            </canvas> -->
+            <!-- [colors]="pieChartColors"> -->
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <!-- <div class="card"> -->
+          <div class="card-body">
+            <!-- <h5 class="card-title">Latest Added Items</h5>
+            <ul>
+              <li *ngFor="let product of recentlyAddedProducts">{{ product.name }}</li>
+            </ul> -->
+
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Recently Added Items</h3>
+                <!-- <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-bs-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-bs-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div> -->
+              </div>
+            
+              <div class="card-body p-0" style="display: block;">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" *ngFor="let product of recentlyAddedProducts">
+                    <div class="d-flex">
+                      <div class="product-img" style=" margin-right: 10%;">
+                        <i class="fa-brands fa-product-hunt" style="font-size: 3em; color: #00000040;"></i>
+                        <!-- <img src="{{ product.image }}" alt="Product Image" class="img-size-50"> -->
+                      </div>
+                      <div class="product-info" style=" width: -webkit-fill-available;">
+                        <a (click)="handleClick(product.assetId)" class="product-title">{{ product.assetId }}
+                          <span class="badge bg-warning text-dark float-end" style="    background-color: rgb(103, 58, 183) !important;
+                          color: white !important;"><mat-icon style="height: 12px;font-size: 12px;">₹</mat-icon>{{ product.priceInr }}</span>
+                        </a>
+                        <p class="product-description"> 
+                          {{ product.description }} , {{product.vendor}}
+                        </p> 
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            
+              <div class="card-footer text-center" style="display: block;">
+                <a [routerLink]="'/table'" class="text-uppercase">View All Products</a>
+              </div>
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+ 

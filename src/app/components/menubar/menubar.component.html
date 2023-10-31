@@ -1,0 +1,57 @@
+
+<mat-toolbar  style="background-color: #673ab7; color: aliceblue; ">
+  <mat-toolbar-row>
+    <button (click)="drawer.toggle()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 >Inventory</h1>
+    <span class="menu-spacer"></span>
+    <div style="margin-left: 23px;">
+      <a mat-button [routerLink]="'/'"> Home </a>
+      <button mat-button [matMenuTriggerFor]="belowMenu1">Products</button>
+      <mat-menu #belowMenu1="matMenu" yPosition="below">
+        <button  [routerLink]="'/addProducts'" mat-menu-item>Add Products</button>
+        <button  [routerLink]="'/bulkUploads'" mat-menu-item>Bulk Upload </button>
+      </mat-menu>
+      <a mat-button [routerLink]="'/table'"> Product List </a>
+      <button mat-button [matMenuTriggerFor]="belowMenu2">Requests</button>
+      <mat-menu #belowMenu2="matMenu" yPosition="below">
+        <button [routerLink]="'/createRequest'" mat-menu-item>Request Item</button>
+        <button [routerLink]="'/manageRequest'" mat-menu-item>My Requests </button>
+      </mat-menu>
+    </div>
+    <button mat-raised-button color="Secondary" [matMenuTriggerFor]="belowMenu3"
+      style="margin-left: auto; box-shadow: none;" class="profile-button">
+      <mat-icon>account_circle</mat-icon>{{name |titlecase}}</button>
+    <mat-menu #belowMenu3="matMenu" yPosition="below">
+      <button mat-menu-item routerLink="/myprofile">My Profile</button>
+      <button mat-menu-item (click)="logout()">Logout</button>
+    </mat-menu>
+  </mat-toolbar-row>
+
+
+</mat-toolbar>
+<mat-drawer-container autosize>
+  <mat-drawer #drawer opened="false" mode="side" position="start">
+    <mat-nav-list>
+      <mat-list-item>
+        <button routerLink="/dashboard" mat-button><mat-icon>dashboard</mat-icon>Categories</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="/addProducts" mat-button><mat-icon>add_shopping_cart</mat-icon>Add Products</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="/bulkUploads" mat-button><mat-icon>cloud_upload</mat-icon>Bulk upload</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="/admin" mat-button><mat-icon>access_time</mat-icon>Pending Requests</button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content class="bg-drawer">
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+

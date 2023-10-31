@@ -1,0 +1,131 @@
+<br />
+
+<div class="div1">
+
+  <h2 style="text-align: center; font-family: cursive;">Raise Request</h2>
+
+</div>
+
+
+
+
+
+<div class="formDiv">
+
+  <form [formGroup]="formGroup" id='form' (ngSubmit)="onSubmit();" class="raise-request-form"
+    style="display:flex; flex-direction: column;">
+
+
+
+    <mat-form-field appearance="outline">
+
+      <mat-label>Location</mat-label>
+
+      <select matNativeControl formControlName="location" placeholder="location">
+
+        <option value="" selected></option>
+
+        <option *ngFor="let loc of Location" [value]="loc">
+
+          {{loc}}
+
+
+
+        </option>
+
+      </select>
+
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="outline">
+
+      <mat-label>Category</mat-label>
+
+      <select matNativeControl formControlName="category">
+
+        <option value="" selected></option>
+
+        <option *ngFor="let cat of Category?.content" [value]="cat.category">
+
+          {{cat.category}}
+
+        </option>
+
+      </select>
+
+
+
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="outline">
+
+      <mat-label>Asset Name</mat-label>
+
+      <input type="text" placeholder="Enter Asset Name" aria-label="assetName" matInput formControlName="assetName">
+<!-- 
+      <select matNativeControl formControlName="assetName">
+
+        <option value="" selected></option>
+
+        <option *ngFor="let AN of assetNames" [value]="AN"> {{AN}}
+
+        </option>
+
+      </select> -->
+
+
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+
+      <mat-label>Quantity</mat-label>
+
+
+
+
+
+
+
+      <input matInput type="number" min="1" placeholder="Select Quantity" formControlName="quantity">
+
+
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+
+      <mat-label>Remarks</mat-label>
+
+
+
+      <input matInput placeholder="Remark" formControlName="remarks">
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+
+      <!-- <mat-label>User Id</mat-label> -->
+
+
+      <mat-label>User Id</mat-label>
+      <input matInput type="text" formControlName="user" placeholder="User Id" readonly="user">
+
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [disabled]="!formGroup.valid"  type="submit">Send Request</button><br>
+    <!-- (click)="refresh()" -->
+
+
+
+
+
+  </form>
+
+
+
+</div>

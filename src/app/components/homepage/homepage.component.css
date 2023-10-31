@@ -1,0 +1,27 @@
+.card{
+transition: transform 0.3s, box-shadow 0.3s;  /* for smooth transition*/
+box-shadow: 0px 2px 4px rgba(0,0,0,0.1); /* shadow*/
+border-left: 6px solid #0000000d;
+background-color: #f8f9fa;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    border-left: 6px solid rgb(103, 58, 183);;
+    background-color: #f5faf9;
+}
+
+.search-box{
+    padding-top: 10px;
+}
+
+.search-box .mdc-text-field--no-label{
+    height:39px
+}
+
+.search-box-input{
+    position: absolute;
+    margin-top: -7px;
+}
+

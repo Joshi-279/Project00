@@ -1,0 +1,28 @@
+
+.formDiv.raise-request-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  position: relative;
+  width: 800px;
+  height: 300px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  /* width: calc(100% / 3 -15px); */
+  padding-right: 10px;
+}
+
+.inputField {
+  padding-right: 50px;
+}
+
+.formDiv {
+  background-color: rgb(244, 243, 248);
+  width: 900px;
+  border: 5px groove rgb(123, 64, 179);
+  padding: 50px;
+  margin: 20px;
+  height: 620px;
+  margin: 0 auto;
+  
+}

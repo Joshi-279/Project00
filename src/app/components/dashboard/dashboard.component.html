@@ -1,0 +1,106 @@
+<div *ngIf="!isLoading" class="content-wrapper" style="min-height: 535px;">
+
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2 pt-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 " style="font-weight: 500; color: #0000009c;">Dashboard</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <!-- small box -->
+                    <div class="card bg-info text-white shadow-sm mb-4 card-ht-fix"  style="background-color: rgb(103, 58, 183) !important;">
+                        <div class="card-body card-bx-body">
+                            <p class="card-text card-bx-heading">{{totalNoOfRequests}}</p>
+                            <h5 class="card-title card-bx-title">Total Requests</h5>
+                            <i class="fas fa-shopping-bag card-bx-icon"></i>
+                        </div>
+                        <div class="card-footer text-center">
+                            <!-- <a href="manageRequest" class="text-decoration-none text-white ">More info</a>
+                            <i class="fas fa-arrow-circle-right"></i> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <!-- small box -->
+                    <div class="card bg-success text-white shadow-sm mb-4 card-ht-fix"  style="background-color: rgb(103, 58, 183) !important;">
+                        <div class="card-body card-bx-body">
+                            <p class="card-text card-bx-heading">{{totalNoOfPendingRequests}}
+                                <!-- <span style="font-size: 14px">%</span></p>
+                            <h5 class="card-title card-bx-title" style="    bottom: -8px;">Pending Requests</h5> -->
+                            <h5 class="card-title card-bx-title">Pending Requests</h5>
+                            <i class="fas fa-chart-bar card-bx-icon"></i>
+                        </div>
+                        <div class="card-footer text-center">
+                            <!-- <a href="admin" class="text-decoration-none text-white ">More info</a>
+                            <i class="fas fa-arrow-circle-right"></i> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <!-- small box -->
+                    <div class="card bg-warning text-white shadow-sm mb-4 card-ht-fix"  style="background-color: rgb(103, 58, 183) !important;">
+                        <div class="card-body card-bx-body">
+                            <p class="card-text card-bx-heading">{{totalNoOfUsers}}</p>
+                            <h5 class="card-title card-bx-title">User Registrations</h5>
+                            <i class="fas fa-user-plus card-bx-icon"></i>
+                        </div>
+                        <div class="card-footer text-center">
+                            <!-- <a href="#" class="text-decoration-none text-white ">More info</a>
+                            <i class="fas fa-arrow-circle-right"></i> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <!-- small box -->
+                    <div class="card bg-danger text-white shadow-sm mb-4 card-ht-fix"  style="background-color: rgb(103, 58, 183) !important;">
+                        <div class="card-body card-bx-body">
+                            <p class="card-text card-bx-heading">{{totalnoOfProducts}}</p>
+                            <h5 class="card-title card-bx-title">Total Items</h5>
+                            <i class="fas fa-chart-pie card-bx-icon"></i>
+                        </div>
+                        <div class="card-footer text-center">
+                            <!-- <a href="table" class="text-decoration-none text-white ">More info</a> -->
+                            <!-- <i class="fas fa-arrow-circle-right"></i> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <app-check [pieChartType]="pieChartType" [pieChartData]="pieChartData" [pieChartLabels]="pieChartLabels"
+            [recentlyAddedProducts]="recentlyAddedProducts"></app-check>
+
+        <!-- </div> -->
+    </section>
+
+
+
+</div>
+
+<!-- Show the spinner until data is loaded -->
+<!-- <div *ngIf="isLoading">
+    <ngx-spinner></ngx-spinner>
+</div> -->
+
+<div *ngIf="isLoading" style="    height: 100vh;
+display: flex;
+justify-content: center;
+background-color: grey;
+    color: white;">
+    <div style="    display: flex;
+    flex-direction: column;
+    justify-content: center;">
+        <mat-spinner [diameter]="50"></mat-spinner>
+        <p style="text-align: center; font-size: 1.3em;">Loading...</p>
+    </div>
+</div>

@@ -1,0 +1,149 @@
+<br />
+<div class="div1">
+  <h2 style="text-align: center; font-family: Roboto, Arial, sans-serif;">Add Product</h2>
+</div>
+
+<div class="formDiv" >
+  <form [formGroup]="myForm"     class="add-products-form">
+    <mat-form-field appearance="outline" class="inputField" >
+      <mat-label>Asset ID</mat-label>
+
+      <input type="text" matInput placeholder="" formControlName="assetId"  required/>
+      <mat-error *ngIf="myForm.get('assetId')?.invalid"></mat-error>
+      
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="inputField">
+      <mat-label>Asset Make</mat-label>
+
+      <input type="text"matInput placeholder="" formControlName="assetMake" />
+      <mat-error *ngIf="myForm.get('assetMake')?.invalid"></mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="inputField">
+      <mat-label>Asset Model</mat-label>
+
+      <input type="text" matInput placeholder="" formControlName="assetModel" />
+      <mat-error *ngIf="myForm.get('assetModel')?.invalid"></mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="inputField">
+      <mat-label>Asset Status</mat-label>
+
+      <input type="text" matInput placeholder="" formControlName="assetStatus" />
+      
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Category</mat-label>
+      <select matNativeControl formControlName="categoryName">
+        <option value="" selected></option>
+        <option *ngFor="let cat of Category?.content" [value]="cat.itemCategoryId">
+          {{cat.category}}
+        </option>
+      </select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="inputField"  style="padding-left: 50px;">
+      <mat-label>Price</mat-label>
+
+      <input type="text" matInput placeholder="" formControlName="price" />
+      <mat-error *ngIf="myForm.get('price')?.invalid">Numeric value only</mat-error>
+      
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="inputField">
+      <mat-label>Bond No.</mat-label>
+
+      <input type="text" matInput placeholder="" formControlName="bondNo" />
+      <mat-error *ngIf="myForm.get('bondNo')?.invalid"></mat-error>
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="outline" class="inputField">
+      <mat-label>Status</mat-label>
+
+      <input type="text" matInput placeholder="" formControlName="status" />
+      
+    </mat-form-field> -->
+
+    <mat-form-field appearance="outline" class="inputField">
+      <mat-label>PO No.</mat-label>
+
+      <input type="text" matInput placeholder="" formControlName="poNo" />
+      <mat-error *ngIf="myForm.get('poNo')?.invalid">Numeric value only</mat-error>
+      
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="inputField">
+      <mat-label>Serial No.</mat-label>
+
+      <input type="text" matInput placeholder="" formControlName="serialNo" />
+      
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="inputField">
+      <mat-label>Vendor</mat-label>
+
+      <input type="text" matInput placeholder="" formControlName="Vendor" />
+      
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="outline" class="inputField">
+      <mat-label>Price Inr</mat-label>
+
+      <input type="text" matInput placeholder="" formControlName="priceInr" />
+      <mat-error *ngIf="myForm.get('priceInr')?.invalid">Numeric value only</mat-error>
+      
+    </mat-form-field> -->
+
+    <mat-form-field appearance="outline" class="inputField">
+      <mat-label>Remarks</mat-label>
+
+      <input type="text" matInput placeholder="" formControlName="remarks" />
+      
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Location</mat-label>
+      <select matNativeControl formControlName="location" placeholder="location">
+        <option value="" selected></option>
+        <option *ngFor="let loc of Location" [value]="loc">
+          {{loc}}
+        </option>
+      </select>
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="outline" class="inputField">
+      <mat-label>Sub Location</mat-label>
+
+      <input type="text" matInput placeholder="" formControlName="subLocation" />
+      <mat-error *ngIf="myForm.get('subLocation')?.invalid"></mat-error>
+    </mat-form-field> -->
+
+    <mat-form-field appearance="outline" class="inputField">
+      <mat-label>Manufacturer</mat-label>
+
+      <input type="text" matInput placeholder="" formControlName="manufacturer" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="inputField">
+      <mat-label>Tags</mat-label>
+
+      <input type="text" matInput placeholder="" formControlName="tags" />
+      
+    </mat-form-field>
+
+    <mat-form-field class="inputField" appearance="outline" >
+      <mat-label>Description</mat-label>
+
+      <input type="text" matInput formControlName="description" style="text-overflow: ellipsis;">
+      <mat-error *ngIf="myForm.get('description')?.invalid"></mat-error>
+    </mat-form-field>
+
+    <br /><br />
+
+    <div class="req">*Required Field</div>
+
+    <button mat-raised-button color="primary" (click)="onSubmit()" class="uploadBtn"  >Upload</button>
+  </form>
+</div>

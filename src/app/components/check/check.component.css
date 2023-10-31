@@ -1,0 +1,30 @@
+.products-list .product-title {
+    font-weight: 600;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.products-list .product-description {
+   
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+element.style {
+}
+.float-right {
+    float: right!important;
+}
+.badge-warning {
+    color: #1f2d3d;
+    background-color: #ffc107;
+}
+
+

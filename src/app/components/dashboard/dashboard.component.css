@@ -1,0 +1,32 @@
+.card-bx-heading{
+    font-size: 2.0em;
+    font-weight: 700;
+}
+
+.card-bx-title{
+    font-weight: 500;
+    font-size: 1.0em;
+    /* margin-top: 20px; */
+    position: relative;
+    bottom: -13px;
+}
+
+.card-bx-body{
+    max-height: 110px;
+}
+
+.card-bx-icon{
+    position: relative;
+    left: 66%;
+    top: -62px;
+    font-size: 60px;
+    color: #00000014;
+}
+
+@media screen and (min-width: 768px){
+    .card-ht-fix{
+        min-height:149px!important
+    }
+}
+
+

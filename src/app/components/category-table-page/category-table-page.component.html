@@ -1,0 +1,119 @@
+<div class="container mb-2">
+    <div class="d-flex">
+        <div class="filter category-search-mat-field-filter">
+            <mat-form-field class="matSelectHeight">
+                <mat-label>Location</mat-label>
+                <mat-select (selectionChange)="applyFilter($event, 'location')" multiple [(ngModel)]="resetLocationFilter">
+                    <mat-option *ngFor="let option of locationOption" [value]="option">{{ option }}</mat-option>
+                </mat-select>
+            </mat-form-field> &nbsp;
+            <mat-form-field class="matSelectHeight">
+                <mat-label>Asset Make</mat-label>
+                <mat-select (selectionChange)="applyFilter($event, 'assetMake')" multiple [(ngModel)]="resetAssetMakeFilter">
+                    <mat-option *ngFor="let option of assetMakeOption" [value]="option">{{ option }}</mat-option>
+                </mat-select>
+            </mat-form-field>&nbsp;
+            <mat-form-field class="matSelectHeight">
+                <mat-label>Vendor</mat-label>
+                <mat-select (selectionChange)="applyFilter($event, 'vendor')" multiple [(ngModel)]="resetVendorFilter">
+                    <mat-option *ngFor="let option of vendorOption" [value]="option">{{ option }}</mat-option>
+                </mat-select>
+            </mat-form-field> &nbsp;&nbsp;&nbsp;
+            <button mat-raised-button (click)="applyFilters01()" style="    position: relative;
+            top: -10px;">Filter</button>&nbsp;
+        <button mat-raised-button  (click)="clearFilters()" style="    position: relative;
+        top: -10px;" >Clear</button>
+        </div>
+        <div style="    margin-left: auto;">
+
+            <!-- search box -->
+            <div class="d-flex " style="justify-content: flex-end;">
+                <div class="col text-end d-flex " style="position: relative;
+        top: 12px;
+        right: 0%;">
+                    <mat-form-field class="search-box " style="margin-left: auto;     width: 100%;">
+                        <input type="tel" class="search-box-input" matInput placeholder="Search" #input style="    position: relative;
+                bottom: 12px;
+                font-size: 17px;
+                " [(ngModel)]="searchText">
+                        <button style="position: relative;
+                top: -36px;
+                left: 89%;
+                border: none;
+                background: none;" (click)="searchAllProducts()">
+                            <mat-icon>search</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="assetId">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Asset ID </th>
+                <td mat-cell *matCellDef="let row"> {{row.assetId}} </td>
+            </ng-container>
+
+            <!-- Vendor Column -->
+            <ng-container matColumnDef="vendor">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Vendor </th>
+                <td mat-cell *matCellDef="let row"> {{row.vendor}} </td>
+            </ng-container>
+
+            <!-- Asset Make Column -->
+            <ng-container matColumnDef="assetMake">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Asset Make </th>
+                <td mat-cell *matCellDef="let row"> {{row.assetMake}} </td>
+            </ng-container>
+
+            <!-- Asset Model Column -->
+            <ng-container matColumnDef="assetModel">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Asset Model </th>
+                <td mat-cell *matCellDef="let row"> {{row.assetModel}} </td>
+            </ng-container>
+
+            <!-- Manufacturer Column -->
+            <ng-container matColumnDef="manufacturer">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Manufacturer </th>
+                <td mat-cell *matCellDef="let row"> {{row.manufacturer}} </td>
+            </ng-container>
+
+            <!-- Location Column -->
+            <ng-container matColumnDef="location">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Location </th>
+                <td mat-cell *matCellDef="let row"> {{row.location}} </td>
+            </ng-container>
+
+            <!-- Price Column -->
+            <ng-container matColumnDef="priceInr">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+                <td mat-cell *matCellDef="let row">{{row.priceInr | number:'0.0' }} </td>
+            </ng-container>
+
+            <!-- Remarks Column -->
+            <ng-container matColumnDef="remarks">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Remarks </th>
+                <td mat-cell *matCellDef="let row"> {{row.remarks}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="handleClick(row)"></tr>
+
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+        </table>
+
+        <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+            (page)="pageEvent($event)" aria-label="Select page"></mat-paginator>
+    </div>
+
+
+</div>
+

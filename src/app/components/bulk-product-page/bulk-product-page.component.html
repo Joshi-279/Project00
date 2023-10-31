@@ -1,0 +1,54 @@
+<br/>
+
+<div class="div1"><h2 style="text-align: center;" >Bulk Upload</h2></div>
+
+ 
+
+<div class="div2">
+
+ 
+
+    <div class="frame">
+
+        <div class="center">
+
+            <div class="title">
+
+                <h1>Select file to upload</h1>
+
+            </div>
+
+           
+
+   
+
+            <div class="dropzone">
+
+                <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon"  />
+
+                <input type="file" class="upload-input"  name="file" accept="application/vnd.ms-excel">
+
+            </div>
+
+ 
+
+           <input type="file" id="fileUpload" class="file-input" name="file" (change)="onFileSelected($event)" accept=".xlsx,application/vnd.ms-excel" />
+
+           
+
+   
+
+           <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+           <button type="button" class="btn" name="uploadbutton"  [disabled]="!correctFileFlag" (click)="onUpload()">Upload file</button>
+            <!-- <button type="button" class="btn" name="uploadbutton"  [disabled]="!selectedFile" (click)="onUpload()">Upload file</button> -->
+           
+
+   
+
+        </div>
+
+    </div>
+
+   
+
+</div>
